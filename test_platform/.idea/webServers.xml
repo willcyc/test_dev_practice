@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5f805e3d-b159-4ead-bf61-1544d0429b86" name="yichuan@192.168.39.128:22" url="http://192.168.39.128">
+        <fileTransfer host="192.168.39.128" port="22" rootFolder="/home/yichuan" accessType="SFTP">
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
