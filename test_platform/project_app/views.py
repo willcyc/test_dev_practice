@@ -8,10 +8,11 @@ def project_manage(request):
     """项目列表管理"""
     username = request.session.get('user','')
     project_all = Project.objects.all()
-    return render(request,'project_manage.html',{'user':username,'projects':project_all,"type":"list"})
-
+    return render(request,'project_app/project_manage.html',{'user':username,"projects":project_all,"type":"list"})
 
 @login_required
 def add_project(request):
     """添加项目"""
-    return render(request, "project_manage.html",{"type":"add"})
+    username = request.session.get('user','')
+    project_all = Project.objects.all()
+    return render(request,'project_app/project_manage.html',{'user':username,"type":"add"})

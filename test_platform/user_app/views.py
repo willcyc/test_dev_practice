@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'user_app/index.html')
 
 #处理登录
 def login_action(request):
@@ -14,7 +14,7 @@ def login_action(request):
         password = request.POST.get("password")
 
         if username == "" or password == "":
-            return render(request, 'index.html', {'error': '用户名或密码不能为空！'})
+            return render(request, 'user_app/index.html', {'error': '用户名或密码不能为空！'})
 
         else:
             user = auth.authenticate(username=username,password=password)
@@ -26,9 +26,9 @@ def login_action(request):
                 request.session['user'] = username
                 return HttpResponseRedirect('/manage/project_manage/')
             else:
-                return render(request,'index.html',{'error': '用户名或密码错误！'})
+                return render(request,'user_app/index.html',{'error': '用户名或密码错误！'})
     else:
-        return render(request,'index.html')
+        return render(request,'user_app/index.html')
 
 def logout(request):
     auth.logout(request)

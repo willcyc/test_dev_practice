@@ -3,6 +3,6 @@ from project_app import views
 
 app_name = 'project_app'
 urlpatterns = [
-    path('project_manage/',views.project_manage),
-    path('add_project/',views.add_project),
+    path('project_manage/',views.project_manage,name="project_manage"),
+    path('add_project/',views.add_project,name="add_project"),
 ]
